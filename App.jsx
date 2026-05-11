@@ -15,7 +15,33 @@ function App() {
   );
 }
 
-//props desestructuradas ---- (App.jsx2)
+
+//App.jsx2 props basicas
+
+
+function Tarjeta(props) {
+  return (
+    <div className="tarjeta">
+      <h2>{props.titulo}</h2>
+      <p>{props.descripcion}</p>
+      <p>⭐ {props.puntuacion}</p>
+    </div>
+  );
+}
+
+// Ahora lo usamos en otra parte (componente padre)
+function App() {
+  return (
+    <div>
+      <Tarjeta titulo="Película 1" />
+      <Tarjeta descripcion="Romance" />
+      <Tarjeta puntuacion="4.5" />
+    </div>
+  );
+}
+export default App;
+
+//props desestructuradas ---- (App.jsx3)
 
 // Definimos el componente Tarjeta que recibe props(componente hijo)
 function Tarjeta({ titulo, descripcion, puntuacion }) {
